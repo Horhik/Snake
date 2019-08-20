@@ -1,10 +1,16 @@
-*Snake
-**simple snake game**
+# Snake
+simple snake game
+***************************
+# Start
 
-*Start
+
+*install dependencies : *
 ```npm install```
-if you on linux
+
+
+*if you on linux : * 
 ```sudo gulp```
-if you on other systems
+
+*if you on other systems : *
 ```gulp```
 
