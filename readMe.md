@@ -1,7 +1,7 @@
-#Snake
+*Snake
 **simple snake game**
 
-#Start
+*Start
 ```npm install```
 if you on linux
 ```sudo gulp```
