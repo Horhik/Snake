@@ -1,0 +1,36 @@
+{
+  "name": "snake",
+  "version": "0.0.1",
+  "description": "snake game",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horhik/snake.git"
+  },
+  "author": "horhik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/horhik/snake/issues"
+  },
+  "homepage": "https://github.com/horhik/snake#readme",
+  "dependencies": {
+    "autoprefixer": "^9.6.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.2.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
