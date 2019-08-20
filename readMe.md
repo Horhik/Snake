@@ -8,7 +8,7 @@ simple snake game
 ```npm install```
 
 
-*if you on linux : * 
+*if you on linux :* 
 ```sudo gulp```
 
 *if you on other systems :*
