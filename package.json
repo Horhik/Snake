@@ -1,6 +1,6 @@
 {
   "name": "snake",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "snake game",
   "main": "gulpfile.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/horhik/snake.git"
   },
   "author": "horhik",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/horhik/snake/issues"
   },
