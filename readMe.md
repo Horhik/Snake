@@ -1,16 +1,23 @@
-# Snake
-simple snake game
-***************************
-# Start
+# Simple snake game
 
+## Start
+just open **./app/index.html**
+
+or
 
 *install dependencies :*
-```npm install```
+```bash
+npm install
+```
 
 
 *if you on linux :* 
-```sudo gulp```
+```bash
+sudo gulp
+```
 
 *if you on other systems :*
-```gulp```
+```bash
+gulp
+```
 
