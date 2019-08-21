@@ -18,8 +18,11 @@ $("keyLeft", function(){
 
 
 setInterval(() => {
-    snake.x += snake.speedX
-    snake.y += snake.speedY
-    snake.color++
+    // var previousX = snake.x
+    // var previousY = snake.y
+    // snake.x += snake.speedX
+    // snake.y += snake.speedy
+    c.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight)
+    snake.color += 0.02 
     snake.render()
-}, 10);
+}, 1000/60)

@@ -1,4 +1,3 @@
-
 const canvas = document.querySelector('.snake')
 canvas.width = innerWidth
 canvas.height = innerHeight
@@ -6,13 +5,17 @@ const c = canvas.getContext('2d')
 let ἅ = 0
 let  = 9 
 
-const Snake = function () {
+const Snake =function () {
     this.x = window.innerWidth/2
     this.y = window.innerHeight/2
+    this.head ={
+        x: window.innerWidth/2,
+        y: window.innerHeight/2
+    }
     this.sizeX = this.sizeY = 30
     this.color = 0
     this.tile = []
-    this.length = 1
+    this.length = 30
     this.speed = 10
     this.speedX = 0
     this.speedY = 0
@@ -35,34 +38,44 @@ const Snake = function () {
         tale : '../src/img/big-tile'
         }
     }
-    this.render = () => {
-        for (let i = 0; i < this.length; i++){
-        c.fillStyle = `hsl(${this.color}, 50%, 50%)`
-        let tileX  = this.x + i * this.sizeX
-        this.showHide(tileX)
-        c.fillRect(tileX , this.y, this.sizeX, this.sizeY)
+        this.render = () => {
+            this.color++
+            this.x += this.speedX
+            this.y += this.speedY
+            c.fillStyle = `hsl(${this.color}, 50%, 50%)`;
+            for( var i = 0; i < this.tile.length; i++ )
+            {
+              c.fillStyle =  `hsl(${this.color}, 50%, 50%)`
+              c.fillRect(this.tile[i].x, this.tile[i].y, this.sizeX, this.sizeY);
+              this.showHide()
+            }
+            this.tile.push({x: this.x, y: this.y});
+          
+            if( this.tile.length > this.length )
+            {
+              this.tile.shift();
+            }
         }
-    }
     this.showHide = (x, y) => {
         //checking left border
-        if ((this.x + this.sizeX )> canvas.width){
+        if (this.x > canvas.width){
             this.x = 0  - this.speedX
         }
         //checking right border
-        if(this.x < -this.speedX){
+        if(this.x + this.sizeX< 0){
             this.x =  canvas.width - this.sizeX  - this.speedX
         }
         //checking bottom border
-        if ((this.y ) > canvas.height){
+        if (this.y > canvas.height){
             this.y = - this.speedY
         }
         //checking top border
-        if(this.y + this.sizeY < -this.speedY){
+        if(this.y + this.sizeY < 0){
             console.log(this.y);
             this.y = canvas.height - this.sizeY
         }
     }
-    c.fillStyle = "red"
+    c.fillStyle = `hsl(${this.color}, 50%, 50%)`;
     c.fillRect(this.x , this.y, this.sizeX, this.sizeY)
 }
 const Feed = function (type, kind = false){
