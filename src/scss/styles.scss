@@ -10,3 +10,18 @@ body{
   display: block;
   background:#323131;
 }
+.score{
+  font-family:'Ubuntu', sans-serif;
+  position: absolute;
+  color: white;
+  // filter: invert(1);
+  margin: 0;
+  padding: 0;
+  display: block;
+  padding: 20px;
+  font-size: 30px;
+  &__number{
+    font-size: 30px;
+    font-weight: bold;
+  }
+}

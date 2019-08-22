@@ -8,3 +8,16 @@ body {
   box-sizing: border-box;
   display: block;
   background: #323131; }
+
+.score {
+  font-family: 'Ubuntu', sans-serif;
+  position: absolute;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: block;
+  padding: 20px;
+  font-size: 30px; }
+  .score__number {
+    font-size: 30px;
+    font-weight: bold; }
