@@ -68,12 +68,29 @@ class Snake {
       }
     }
 	encounter(eat, place = game){
-		if ((eat.x + eat.size) <= this.x + this.sizeX && (eat.x) >= this.x || (eat.y + eat.size) <= (this.y + this.sizeY) && eat.y >- this.y ){
+		if (
+			 this.x <= eat.x + eat.size/2 &&
+			 this.y <= eat.y + eat.size/2 && 
+			 this.x + this.sizeX >= eat.x - eat.size/2  &&
+			 this.y + this.sizeY >= eat.y - eat.size/2 
+		){
 			place.hasFeed = false
-			console.log(place)
-			this.score++
+			this.score += eat.sts
+			this.length += eat.sts 
 			document.querySelector('.score__number').textContent = this.score
 		}
+		// for (let i = 11; i < this.tile.length; i += 5){
+		// 	if (
+		// 	 this.x + this.sizeX === this.tile[i].x + this.sizeX &&
+		// 	 this.y + this.sizeY === this.tile[i].y + this.sizeX && 
+		// 	 this.x  === this.tile[i].x   &&
+		// 	 this.y  === this.tile[i].y &&  
+		// 	 this.length !== 100
+		// 		){
+		// 			this.length = i
+		// 			console.log('looser', i)
+		// 		}
+		// }
 	}
 }
 class Feed {
@@ -108,13 +125,15 @@ class Feed {
 	    if (eatRandom <= 60){
 		    this.rare = 'simple'
 		    this.size = 30
+			this.sts = 5
 			fill('red')
 			this.real[3] = 'red'
 			ellipse(this.x, this.y, this.size)
 			noStroke()
 		}
-		else if (eatRandom <= 55){
+		else if (eatRandom <= 95){
 		    this.rare = 'middle'
+			this.sts = 15
 		    this.size = 20
 			fill('yellow')
 			this.real[3] = 'yellow'
@@ -123,6 +142,7 @@ class Feed {
 		}
 		else if (eatRandom <= 100){
 		    this.rare = 'rare'
+			this.sts = 30
 		    this.size = 10
 			this.real[3] = this.color
 			fill(`hsl(${this.real[3]}, 30%, 50%)`)
