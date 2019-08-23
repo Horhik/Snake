@@ -4,7 +4,7 @@ let game = new Game()
 let feed
 function setup () {
     createCanvas(window.innerWidth, window.innerHeight)
-    snake = new Snake(100, 3, game)
+    snake = new Snake(300, 9, game)
         feed = new Feed(game)
 
 }

@@ -1,3 +1,4 @@
+
 class Game {
   	constructor () {
 		  this.hasFeed = false
@@ -33,18 +34,20 @@ class Snake {
       rect(this.x, this.y, this.sizeX, this.sizeY)
       this.tiling()
       for (let i = 0; i < this.tile.length; i++) {
+
         fill(`hsl(${this.color}, 50%, 50%)`)
+				
         rect(this.tile[i].x, this.tile[i].y, this.sizeX, this.sizeY)
       }
       noStroke()
     }
-    teleport(){
+    teleport(){	
       if (this.x + this.sizeX < 0) {
         this.x = innerWidth
       }
       if (this.x > innerWidth) {
         this.x = 0
-      }
+      }		 
       if (this.y + this.sizeY < 0) {
         this.y = innerHeight
       }
@@ -53,7 +56,12 @@ class Snake {
       }
     }
     scaling(){
-      this.speed *= 1.00004
+		if (this.speed   <= 19.5){
+      this.speed =2 + this.score/70
+		}
+		else{
+			this.speed = 20
+		}
       this.x += this.speedX
       this.y += this.speedY
       this.color++
@@ -79,18 +87,27 @@ class Snake {
 			this.length += eat.sts 
 			document.querySelector('.score__number').textContent = this.score
 		}
-		// for (let i = 11; i < this.tile.length; i += 5){
-		// 	if (
-		// 	 this.x + this.sizeX === this.tile[i].x + this.sizeX &&
-		// 	 this.y + this.sizeY === this.tile[i].y + this.sizeX && 
-		// 	 this.x  === this.tile[i].x   &&
-		// 	 this.y  === this.tile[i].y &&  
-		// 	 this.length !== 100
-		// 		){
-		// 			this.length = i
-		// 			console.log('looser', i)
-		// 		}
-		// }
+		for (let i = 10; i < this.tile.length - 1; i += 1){
+			let head = {
+				x: this.tile[this.tile.length - 1].x,
+				y: this.tile[this.tile.length - 1].y,
+			}
+			let size = this.sizeX/2
+			let target = {
+				x: this.tile[i].x, 
+				y: this.tile[i].y
+			}
+			if (
+				head.x + size === target.x + size&&
+				head.y + size === target.y + size &&
+				i < this.tile.length - 10
+			){
+
+					this.length =this.tile.length- i 
+					this.tile.length  =this.tile.length- i
+			console.log(i, this.tile.length)
+			}
+		}
 	}
 }
 class Feed {
@@ -103,7 +120,9 @@ class Feed {
 		this.real =[]
 	  	this.sizeX = size
 	  	this.sizeY = size
-	  	this.temper = temper  
+	  	this.temper = temper 
+		  this.speed = 1
+		  this.speedY = 6
 	  	this.sts = 					// from "salutariness"
 	  		rare === "simple" ? 1 :
 			rare === "middle" ? 3 :
@@ -149,15 +168,25 @@ class Feed {
 			ellipse(this.x, this.y, this.size)
 			noStroke()
 		}
-		this.real[0] = this.x
-		this.real[1] = this.y
+		this.real[0] = this.x 
+		this.real[1] = this.y 
 		this.real[2] = this.size
         game.hasFeed  = true
 	}
 	update(){
 		fill(this.real[3])
 		this.animation()
-		ellipse(this.real[0], this.real[1], this.real[2])
+		this.x += this.speed
+		this.y += this.speedY
+		this.real[0] += this.speed
+		this.real[1] += this.speedY
+		if (this.real[0] + this.real[2]/2 > width || this.real[0] - this.real[2]/2 < 0){
+			this.speed *= -1
+		}
+		if (this.real[1] + this.real[2]/2 > height || this.real[1] - this.real[2]/2 < 0){
+			this.speedY *= -1
+		}
+		ellipse(this.real[0] , this.real[1] , this.real[2])
 		noStroke()	
 	}
 }
