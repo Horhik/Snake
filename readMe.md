@@ -1,5 +1,7 @@
 # Simple snake game
 
+  Play on codepen : https://codepen.io/horhik/pen/MWgJXba
+
 ## Start
 just open **./app/index.html**
 
