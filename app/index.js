@@ -27,6 +27,38 @@ function keyPressed () {
             snake.speedX = 0
     }
 }
+let mx 
+let my
+let direction
+function touchStarted() {
+        mx = mouseX
+        my = mouseY
+}
+function touchEnded (){
+        if (Math.abs(mx - mouseX) > Math.abs(my - mouseY))
+        {
+                direction = mx > mouseX ? 'left' : 'right'
+        }else if (Math.abs(mx - mouseX) < Math.abs(my - mouseY))
+        {
+                direction = my < mouseY ? 'down' : 'up'
+        }
+        if (direction === 'left' && snake.speedX===0) {
+            snake.speedX = -snake.speed
+            snake.speedY = 0
+        }
+        if (direction === 'right'  && snake.speedX===0) {
+                snake.speedX = snake.speed
+                snake.speedY = 0
+        }
+        if (direction === 'up'  && snake.speedY===0) {
+                snake.speedY = -snake.speed
+                snake.speedX = 0
+        }
+        if (direction === 'down'  && snake.speedY===0) {
+                snake.speedY = snake.speed
+                snake.speedX = 0
+        }
+}
 function draw () { 
         background(53)
         if(!game.hasFeed){feed.show()}

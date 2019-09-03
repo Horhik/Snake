@@ -106,6 +106,7 @@ class Snake {
 					this.length =this.tile.length- i 
 					this.tile.length  =this.tile.length- i
 			console.log(i, this.tile.length)
+			this.score = 0
 			}
 		}
 	}
@@ -120,7 +121,8 @@ class Feed {
 		this.real =[]
 	  	this.sizeX = size
 	  	this.sizeY = size
-	  	this.temper = temper 
+	  	this.temper = temper
+	  	this.eatRandom =0 
 		  this.speed = 1
 		  this.speedY = 6
 	  	this.sts = 					// from "salutariness"
@@ -138,7 +140,7 @@ class Feed {
 
 		this.real = []
 		this.animation()
-	    let eatRandom = ~~(Math.random() * 100)
+	   let eatRandom = this.eatRandom = ~~(Math.random() * 100) 
 		this.x = ~~(Math.random() * width)
 		this.y = ~~(Math.random() * height)
 	    if (eatRandom <= 60){
@@ -174,8 +176,18 @@ class Feed {
         game.hasFeed  = true
 	}
 	update(){
+		if(this.eatRandom > 95){
 		fill(this.real[3])
+	}
+		else if(this.eatRandom > 60){
+		fill('yellow')
+
+		}
+		else{
+			fill('green')
+		}
 		this.animation()
+
 		this.x += this.speed
 		this.y += this.speedY
 		this.real[0] += this.speed
