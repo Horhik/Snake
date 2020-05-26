@@ -8,6 +8,14 @@ function setup () {
         feed = new Feed(game)
 
 }
+let floating = document.querySelectorAll('.floating')
+
+setTimeout(() => {
+        
+        floating.forEach(elem => {
+                elem.style.display = 'none'
+        })
+}, 6000);
 
 function keyPressed () {
     if (keyCode === LEFT_ARROW && snake.speedX === 0) {
@@ -33,6 +41,7 @@ let direction
 function touchStarted() {
         mx = mouseX
         my = mouseY
+
 }
 function touchEnded (){
         if (Math.abs(mx - mouseX) > Math.abs(my - mouseY))

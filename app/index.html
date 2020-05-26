@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>snake</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<!-- <canvas class="snake"></canvas> -->
-<!-- <script src="FE.js"></script> -->
-<p class="score">Your score is : <span class="score__number">0</span></p>
-<script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
-//]]></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js" defer ></script>
-<script src="constructors.js" defer ></script>
-<script src="index.js" defer ></script>
-</body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- <canvas class="snake"></canvas> -->
+    <!-- <script src="FE.js"></script> -->
+    <h1 class="floating header">Snake game</h1>
+    <div class="floating">
+      <span>Catch the ball!</span><br>
+      <span>Press Arrows to play</span><br>
+      <span>Or swipe the screen</span><br>
+    </div>
+    <p class="score">Your score is : <span class="score__number">0</span></p>
+
+    <script id="__bs_script__">
+      //<![CDATA[
+      document.write(
+        "<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace(
+          "HOST",
+          location.hostname
+        )
+      );
+      //]]>
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"
+      defer
+    ></script>
+    <script src="constructors.js" defer></script>
+    <script src="index.js" defer></script>
+  </body>
 </html>
