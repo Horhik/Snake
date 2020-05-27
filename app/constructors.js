@@ -1,4 +1,4 @@
-
+const ppi = ~~window.devicePixelRatio
 class Game {
   	constructor () {
 		  this.hasFeed = false
@@ -14,8 +14,8 @@ class Snake {
       x: window.innerWidth / 2,
       y: window.innerHeight / 2
     }
-    this.sizeX = 20 // with textures 55.5
-    this.sizeY = 20 // with textures 62.5
+    this.sizeX = 20 * ppi// with textures 55.5
+    this.sizeY = 20 * ppi// with textures 62.5
     this.color = 0
     this.tile = []
 	this.score = 0
@@ -112,7 +112,7 @@ class Snake {
 	}
 }
 class Feed {
-  	constructor (game, size = 30, rare = 'simple', temper = true) {
+  	 constructor (game, size = 30 * ppi , rare = 'simple', temper = true) {
 	  	this.rare = rare
 	  	this.x = Math.random() * width
 	  	this.y = Math.random() * height
@@ -145,7 +145,7 @@ class Feed {
 		this.y = ~~(Math.random() * height)
 	    if (eatRandom <= 60){
 		    this.rare = 'simple'
-		    this.size = 30
+		    this.size = 30 * ppi
 			this.sts = 5
 			fill('red')
 			this.real[3] = 'red'
@@ -155,7 +155,7 @@ class Feed {
 		else if (eatRandom <= 95){
 		    this.rare = 'middle'
 			this.sts = 15
-		    this.size = 20
+		    this.size = 20 * ppi
 			fill('yellow')
 			this.real[3] = 'yellow'
 			ellipse(this.x, this.y, this.size)
@@ -164,7 +164,7 @@ class Feed {
 		else if (eatRandom <= 100){
 		    this.rare = 'rare'
 			this.sts = 30
-		    this.size = 10
+		    this.size = 10 * ppi
 			this.real[3] = this.color
 			fill(`hsl(${this.real[3]}, 30%, 50%)`)
 			ellipse(this.x, this.y, this.size)

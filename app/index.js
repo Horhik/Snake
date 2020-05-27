@@ -1,4 +1,3 @@
-
 let snake = ''
 let game = new Game()
 let feed
@@ -43,6 +42,7 @@ function touchStarted() {
         my = mouseY
 
 }
+
 function touchEnded (){
         if (Math.abs(mx - mouseX) > Math.abs(my - mouseY))
         {
@@ -71,9 +71,13 @@ function touchEnded (){
 function draw () { 
         background(53)
         if(!game.hasFeed){feed.show()}
+        for(let i = 0; i <= ppi**2; i++){
         feed.update()
+        }
         snake.encounter(feed, game)
+        for(let i = 0; i <= ppi**2; i++){
         snake.update()
+        }
         snake.show()
 
 }
