@@ -1,44 +1,48 @@
 body {
-
-    font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   margin: 0;
   padding: 0;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .snake {
   margin: 0;
   box-sizing: border-box;
   display: block;
-  background: #323131; }
+  background: #323131;
+}
 
 .score {
-    font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   position: absolute;
   color: white;
   margin: 0;
   padding: 0;
   display: block;
   padding: 20px;
-  font-size: 30px; }
-  .score__number {
-    font-size: 30px;
-    font-weight: bold; }
-.floating{
-    color: #ffffff30;
-    position: absolute;
-    width: 180px;
-    text-align: center;
-    top: 120px;
-    right: calc(50% - 180px/2);
-
+  font-size: 30px;
 }
-  .header{
-    color: #ffffff90;
-    font-size: 60px;
-    font-family: 'Bebas Neue', cursive;
-    position: absolute;
-    width: 300px;
-    text-align: center;
-    top: 20px;
-    right: calc(50% - 300px/2);
-  }
+.score__number {
+  font-size: 30px;
+  font-weight: bold;
+}
+.floating {
+  color: #ffffff30;
+  position: absolute;
+  width: 50vw;
+  text-align: center;
+  top: 50vh;
+  font-size: 5vw;
+  right: calc(50% - 50vw / 2);
+}
+.header {
+  color: #ffffff90;
+  font-size:15vw;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  position: absolute;
+  width: 50vw;
+  text-align: center;
+  top: 20px;
+  right: calc(50% - 50vw/ 2);
+}
