@@ -15,7 +15,7 @@ setTimeout(() => {
         floating.forEach(elem => {
                 elem.style.display = 'none'
         })
-}, 6000);
+}, 7500);
 
 function keyPressed () {
     if (keyCode === LEFT_ARROW && snake.speedX === 0) {
